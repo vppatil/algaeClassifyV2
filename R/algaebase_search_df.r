@@ -33,18 +33,6 @@ algaebase_search_df<-function(df,apikey=NULL,handle=NULL,genus.only=FALSE,
                               api_file=NULL,sleep.time=1)
 {
   
-  #for testing:
-  # phytodat.sub<-phytodat[sample(1:nrow(phytodat),10,replace=FALSE),]
-  
-  #requires:
-  # library(curl)
-  # library(jsonlite)
-  # library(lubridate)
-  #note- cannot print full json, and returns newest_exact_matches only
-  #if species is not supplied, will search genus only
-  #if no species match is found, default to genus search
-  #if no genus match is found, return a data frame row with input name+
-  #NAs
   algaebase_df<-data.frame()
 
   nrows=nrow(df)

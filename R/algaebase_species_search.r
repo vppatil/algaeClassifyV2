@@ -73,7 +73,7 @@ algaebase_species_search<-function(genus,species,apikey=NULL,handle=NULL,
   }
   
   #submit query
-  con <- curl(species.search.string, handle = handle)
+  con <- curl::curl(species.search.string, handle = handle)
   
   #parse query results
   results<-try(readLines(con),silent=TRUE)

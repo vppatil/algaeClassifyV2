@@ -45,7 +45,7 @@ algaebase_genus_search<-function(genus=NULL,apikey=NULL,handle=NULL,
     handle<-set_algaebase_apikey_header(apikey)
   }
   
-  con <- curl(genus.search.string, handle = handle)
+  con <- curl::curl(genus.search.string, handle = handle)
   results<-try(readLines(con),silent=TRUE)
   if(class(results)=="try-error")
   {
@@ -145,14 +145,3 @@ algaebase_genus_search<-function(genus=NULL,apikey=NULL,handle=NULL,
       
     return(output)
 }
-##Arguments:
-# genus=input genus name
-# apikey= key from algaebase
-# handle= curl handle containing key, if already set up
-# higher= boolean (return higher taxonomic classifications?)
-# pring.full.json=boolean (return full api output in json format?)
-# newest.only=boolean (only return most recently entered match?)
-# long=boolean (include additional information including full taxonomic name, authorship, 
-#               database modification date, and detailed taxonomic status information?)
-# print.df=boolean (print the output to the console or not?)
-# exact.matches.only (only return database entries that exactly match the input genus name?)
