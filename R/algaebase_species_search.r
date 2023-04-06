@@ -139,7 +139,7 @@ taxonomic.species<-algaebase_output_parse(results.output,"dwc:specificEpithet")
 taxonRank<-algaebase_output_parse(results.output,"dwc:taxonRank")
 authorship<-algaebase_output_parse(results.output,"dwc:scientificNameAuthorship")
 mod.date<-algaebase_output_parse(results.output,"dcterms:modified")
-mod.date<-ymd(mod.date) #set as date type so you can sort output based on latest modification
+mod.date<-lubridate::ymd(mod.date) #set as date type so you can sort output based on latest modification
 currently.accepted=ifelse(taxonomic.status=='currently accepted taxonomically',1,0)
 #need to clean up accepted name section.
 accepted.name<-ifelse(currently.accepted==1,

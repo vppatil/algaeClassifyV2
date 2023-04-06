@@ -107,7 +107,7 @@ algaebase_genus_search<-function(genus=NULL,apikey=NULL,handle=NULL,
   taxonRank<-algaebase_output_parse(results.output,"dwc:taxonRank")
   authorship<-algaebase_output_parse(results.output,"dwc:scientificNameAuthorship")
   mod.date<-algaebase_output_parse(results.output,"dcterms:modified")
-  mod.date<-ymd(mod.date) #set as date type so you can sort output based on latest modification
+  mod.date<-lubridate::ymd(mod.date) #set as date type so you can sort output based on latest modification
   accepted.name<-algaebase_output_parse(results.output,"dwc:acceptedNameUsage")
   input.name=genus
   input.match=ifelse(genus==taxonomic.genus,1,0)
