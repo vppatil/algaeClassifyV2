@@ -64,7 +64,7 @@ algaebase_genus_search<-function(genus=NULL,apikey=NULL,handle=NULL,
   }
   
   #transform to r list of lists
-  result.list<-fromJSON(results)
+  result.list<-jsonlite::fromJSON(results)
   
   
   #objects
