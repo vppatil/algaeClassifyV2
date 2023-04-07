@@ -5,10 +5,8 @@
 #' @param handle curl handle with API key. Will be created if not present.
 #' @param higher boolean should higher taxonomy be included in output?
 #' @param print.full.json boolean returns raw json output if TRUE. Default is FALSE (return R data frame)
-#' @param newest.only boolean should results be limited to the most recent matching entry in algaebase?
 #' @param long boolean return long output including full species name and authorship, and entry date from algaebase.
 #' @param exact.matches.only boolean should results be limited to exact matches?
-#' @param return.higher.only boolean should output only included higher taxonomy?
 #' @param api_file path to text file containing a valid API key
 #' @param sleep.time delay between algaebase queries (in seconds). Should be at least 1 second if querying more than 10 names at once.
 #'

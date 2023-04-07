@@ -1,6 +1,7 @@
 #' Retrieve taxonomic information from the algaebase online database (www.algaebase.org) based on a user-specified genus and species name . This function requires a valid API key for algaebase.
 #'
 #' @param genus genus name as character string
+#' @param species species name as character string
 #' @param apikey valid key for algaebase API as character string
 #' @param handle curl handle with API key. Will be created if not present.
 #' @param higher boolean should higher taxonomy be included in output?
@@ -8,7 +9,6 @@
 #' @param newest.only boolean should results be limited to the most recent matching entry in algaebase?
 #' @param long boolean return long output including full species name and authorship, and entry date from algaebase.
 #' @param exact.matches.only boolean should results be limited to exact matches?
-#' @param return.higher.only boolean should output only included higher taxonomy?
 #' @param api_file path to text file containing a valid API key
 #'
 #' @export algaebase_species_search
@@ -22,7 +22,7 @@
 #'
 algaebase_species_search<-function(genus,species,apikey=NULL,handle=NULL,
                                  higher=TRUE,print.full.json=FALSE,
-                                 newest.only=TRUE,long=FALSE,print.df=FALSE,exact.matches.only=FALSE,
+                                 newest.only=TRUE,long=FALSE,exact.matches.only=FALSE,
 								 api_file=NULL){
 
   #first, throw error if there is no genus name
