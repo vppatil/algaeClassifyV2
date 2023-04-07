@@ -25,8 +25,6 @@
 #' lakegeneva.algaebase<-algaebase_search_df(new.lakegeneva,higher=TRUE,long=TRUE)
 #' head(lakegeneva.algaebase)}
 #'
-#' #Note: Example assumes API key has been stored in the ALGAEBASE_API environment variable in ~/.Renviron
-
 algaebase_search_df<-function(df,apikey=NULL,handle=NULL,genus.only=FALSE,
                               genus.name='genus',species.name='species',
                               higher=TRUE,print.full.json=FALSE,
