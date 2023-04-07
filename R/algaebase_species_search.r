@@ -77,7 +77,7 @@ algaebase_species_search<-function(genus,species,apikey=NULL,handle=NULL,
 
   #parse query results
   results<-try(readLines(con),silent=TRUE)
-  if(is(results"try-error"))
+  if(is(results,"try-error"))
   {
     close(con)
     stop("No matches") #throw error for now.
