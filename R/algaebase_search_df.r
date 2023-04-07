@@ -1,7 +1,10 @@
 #' Search algaebase for information about a list of phytoplankton names
 #'
-#' @param genus genus name as character string
+#' @param df data frame containing columns with genus and species names
 #' @param apikey valid key for algaebase API as character string
+#' @param genus.only boolean: should searches be based solely on the genus name?
+#' @param genus.name name of data.frame column that contains genus names
+#' @param species.name name of data.frame column that contains species names
 #' @param handle curl handle with API key. Will be created if not present.
 #' @param higher boolean should higher taxonomy be included in output?
 #' @param print.full.json boolean returns raw json output if TRUE. Default is FALSE (return R data frame)
