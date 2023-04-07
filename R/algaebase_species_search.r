@@ -22,7 +22,7 @@
 #'
 algaebase_species_search<-function(genus,species,apikey=NULL,handle=NULL,
                                  higher=TRUE,print.full.json=FALSE,
-                                 newest.only=TRUE,long=FALSE,exact.matches.only=FALSE,
+                                 newest.only=TRUE,long=FALSE,exact.matches.only=TRUE,
 								 api_file=NULL){
 
   #first, throw error if there is no genus name
