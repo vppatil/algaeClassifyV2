@@ -1,5 +1,5 @@
 #' Retrieve taxonomic information from the algaebase online database (www.algaebase.org) based on a user-specified genus and species name . This function requires a valid API key for algaebase.
-#' 
+#'
 #' @param genus genus name as character string
 #' @param apikey valid key for algaebase API as character string
 #' @param handle curl handle with API key. Will be created if not present.
@@ -17,7 +17,7 @@
 #'
 #' @examples
 #'
-#' algaebase_species_search("Anabaena flos-aquae") #not run
+#' \dontrun{algaebase_species_search("Anabaena flos-aquae")} #not run
 #'
 #'
 algaebase_species_search<-function(genus,species,apikey=NULL,handle=NULL,
@@ -30,9 +30,9 @@ algaebase_species_search<-function(genus,species,apikey=NULL,handle=NULL,
   #database.
   if(genus==''|is.na(genus)|is.null(genus))
   {
-    stop("No genus name supplied") 
+    stop("No genus name supplied")
   }
-  
+
   #parse infraspecific names from specificEpithet, if present
   #and create appropriate search query string.
   #genus_species_extract strips out infraspecific category names
@@ -40,23 +40,23 @@ algaebase_species_search<-function(genus,species,apikey=NULL,handle=NULL,
   if(length(grep(" ",species)>0)){
     species.split=strsplit(species,split=' ')[[1]]
     sp=species.split[1]
-    
+
     #remove weird descriptors from species
     sp<-gsub(r"{\s*\([^*].*}","",sp)
     sp<-gsub(">","",sp)
     sp<-gsub("<","",sp)
-    
+
     infrasp=species.split[2]
-    
+
     species.search.string<-paste0("https://api.algaebase.org/v1.3/species?genus=",
                                   genus,"&dwc:specificEpithet=",sp,
                                   "&dwc:scientificName=",infrasp)
-                                
+
     }else{
      species.search.string<-paste0("https://api.algaebase.org/v1.3/species?genus=",genus,
                                   "&dwc:specificEpithet=",species)
 }
-  
+
 
 
   #check for api key in Sys.env
@@ -66,49 +66,49 @@ algaebase_species_search<-function(genus,species,apikey=NULL,handle=NULL,
   }else if(!is.null(api_file)){
 	apikey<-get_apikey_fromfile(api_file)
   }
-  
+
   #set curl handle if not supplied as an argument
   if(is.null(handle)){
     handle<-set_algaebase_apikey_header(apikey)
   }
-  
+
   #submit query
   con <- curl::curl(species.search.string, handle = handle)
-  
+
   #parse query results
   results<-try(readLines(con),silent=TRUE)
   if(class(results)=="try-error")
   {
     close(con)
-    stop("No matches") #throw error for now. 
+    stop("No matches") #throw error for now.
     #will need to modify in wrapper so that it fills with NA instead.
   }
-  
+
   results<-jsonlite::prettify(results)
   close(con) #need to close the connection asap.
-  
+
   if(print.full.json){ #can just return the raw output if that is what user wants
     print(results)
     return(results)
-    
+
   }
   #transform to r list of lists
   result.list<-jsonlite::fromJSON(results)
-  
+
   #objects
-  
+
   #so, if no match in the first page of output, you have to keep going.
   #need to deal with the issue of multiple pages more explicitly at some point
   #but it shouldn't be a huge problem most of the time.
   #for now you could return a flag or warning if there are multiple pages of results.
-  
+
   pagination<-result.list[[1]]
   results.output<-result.list[[2]]
-  
-  
-  # num.results<-pagination$"_total_number_of_results" 
+
+
+  # num.results<-pagination$"_total_number_of_results"
   # num.pages<-pagination$"_total_number_of_pages"
-  
+
   #dealing with infraspecific name
   output.infraspname<-ifelse(results.output$"dwc:taxonRank"=="forma",
                                     results.output$infraspecificEpithet_forma,
@@ -118,9 +118,9 @@ algaebase_species_search<-function(genus,species,apikey=NULL,handle=NULL,
                                                   results.output$infraspecificEpithet_subspecies,"")))
   output.clean.names<-paste(results.output$"dwc:genus",results.output$"dwc:specificEpithet",output.infraspname)
   output.clean.names<-trimws(output.clean.names)
-  
+
 input.clean.name<-paste(genus,species)
-  
+
 output.match.indices<-output.clean.names==input.clean.name
 
 #only retain exact matches if asked.
@@ -165,7 +165,7 @@ for(i in 1:nrow(output)){
 }
 
 
-  
+
   if(higher){ #merge higher taxonomy and reorder names of output variable
     higher.taxonomy<-algaebase_genus_search(genus,
                                             return.higher.only = TRUE,
@@ -174,20 +174,20 @@ for(i in 1:nrow(output)){
     output<-subset(output,select= c('accepted.name','input.name','input.match','currently.accepted','genus.only','kingdom','phylum','class','order','family','genus','species','infrasp',
                                     'long.name','taxonomic.status','taxon.rank','mod.date','authorship'))}else{
     output<-subset(output,select=c('accepted.name','input.name','input.match','currently.accepted','genus.only','genus','species','infrasp',
-                                                                     'long.name','taxonomic.status','taxon.rank','mod.date','authorship') )  
-   
+                                                                     'long.name','taxonomic.status','taxon.rank','mod.date','authorship') )
+
                                     }
   if(newest.only){
     output<-output[output$mod.date==max(output$mod.date),] #only retain the most recent edit
   }else{
     output<-output[order(output$mod.date,decreasing=TRUE),]
   }
-  
+
 
   if(!long){output<-output[,names(output) %in% c('long.name','authorship','taxonomic.status','mod.date')==FALSE]}
-  
 
-  
+
+
   return(output)
 
 }

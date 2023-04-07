@@ -47,7 +47,7 @@ Retrieve taxonomic information from the algaebase online database (www.algaebase
 }
 \examples{
 
-algaebase_species_search("Anabaena flos-aquae") #not run
+\dontrun{algaebase_species_search("Anabaena flos-aquae")} #not run
 
 
 }

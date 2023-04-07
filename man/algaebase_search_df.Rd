@@ -57,5 +57,4 @@ new.lakegeneva <- genus_species_extract(lakegeneva,'phyto_name')
 lakegeneva.algaebase<-algaebase_search_df(new.lakegeneva,higher=TRUE,long=TRUE)
 head(lakegeneva.algaebase)}
 
-#Note: Example assumes API key has been stored in the ALGAEBASE_API environment variable in ~/.Renviron
 }

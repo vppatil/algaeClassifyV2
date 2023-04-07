@@ -45,6 +45,6 @@ data frame that may include: accepted.name (currently accepted synonym if differ
 Search algaebase for information about a genus of phytoplankton
 }
 \examples{
-\donttest{algaebase_genus_search("Anabaena")} #not run.
+\dontrun{algaebase_genus_search("Anabaena")} #not run.
 
 }
