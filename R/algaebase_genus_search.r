@@ -96,10 +96,23 @@ algaebase_genus_search<-function(genus=NULL,apikey=NULL,handle=NULL,
                                   family=taxonomic.family,
                                 genus=taxonomic.genus)
 
-    if(return.higher.only==TRUE){
-      return(higher.taxonomy)
-    }
+    mod.date<-algaebase_output_parse(results.output,"dcterms:modified")
+    mod.date<-lubridate::ymd(mod.date) #set as date type so you can sort output based on latest modification
 
+    if(return.higher.only==TRUE){
+      if(exact.matches.only){
+        if(sum(taxonomic.genus==genus)==0){stop("No exact matches found")
+        }else{higher.taxonomy<-higher.taxonomy[taxonomic.genus==genus,]}
+      }
+
+      if(newest.only){
+        higher.taxonomy<-higher.taxonomy[mod.date==max(mod.date),] #only retain the most recent edit
+      }else{
+        higher.taxonomy<-higher.taxonomy[order(mod.date,decreasing=TRUE),]
+      }
+
+    return(higher.taxonomy)
+    }
   }
 
   long.name<-algaebase_output_parse(results.output,"dwc:scientificName")

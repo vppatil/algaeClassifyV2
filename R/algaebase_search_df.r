@@ -93,7 +93,7 @@ algaebase_search_df<-function(df,apikey=NULL,handle=NULL,genus.only=FALSE,
                                     newest.only=TRUE,long=long,
                                     exact.matches.only=exact.matches.only,
                                     api_file=api_file),silent=TRUE)
-        if(class(tmp)=='try-error'){
+        if(is(tmp,'try-error')){
           tmp<-try(algaebase_genus_search(genus=genus,apikey=apikey,handle=handle,
                                           higher=higher,
                                           print.full.json=FALSE,
@@ -104,7 +104,7 @@ algaebase_search_df<-function(df,apikey=NULL,handle=NULL,genus.only=FALSE,
         }
       }
 
-      if(class(tmp)=='try-error'){
+      if(is(tmp,'try-error')){
         tmp<-err.row.func(df=df,index=i,
                                   genus.only=genus.only,
                                   genus.name=genus.name,

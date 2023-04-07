@@ -170,6 +170,7 @@ for(i in 1:nrow(output)){
     higher.taxonomy<-algaebase_genus_search(genus,
                                             return.higher.only = TRUE,
                                             handle=handle,exact.matches.only = TRUE,newest.only = TRUE);
+
     output<-merge(higher.taxonomy,output,all.y=TRUE,by='genus',sort=FALSE);
     output<-subset(output,select= c('accepted.name','input.name','input.match','currently.accepted','genus.only','kingdom','phylum','class','order','family','genus','species','infrasp',
                                     'long.name','taxonomic.status','taxon.rank','mod.date','authorship'))}else{
