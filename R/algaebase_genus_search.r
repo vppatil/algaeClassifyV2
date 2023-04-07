@@ -46,15 +46,14 @@ algaebase_genus_search<-function(genus=NULL,apikey=NULL,handle=NULL,
   }
 
   con <- curl::curl(genus.search.string, handle = handle)
-  results<-try(readLines(con),silent=TRUE)
-  if(class(results)=="try-error")
+  results<-jsonlite::prettify(try(readLines(con),silent=TRUE))
+  if(is(results,"try-error"))
   {
     close(con)
     stop("No matches") #throw error for now.
     #will need to modify in wrapper so that it fills with NA instead.
   }
 
-  results<-jsonlite::prettify(try(readLines(con),silent=TRUE))
   close(con)
 
   if(print.full.json){ #can just return the raw output if that is what user wants
@@ -96,6 +95,7 @@ algaebase_genus_search<-function(genus=NULL,apikey=NULL,handle=NULL,
                                   order=taxonomic.order,
                                   family=taxonomic.family,
                                 genus=taxonomic.genus)
+
     if(return.higher.only==TRUE){
       return(higher.taxonomy)
     }
@@ -116,7 +116,7 @@ algaebase_genus_search<-function(genus=NULL,apikey=NULL,handle=NULL,
 
   output<-data.frame(genus=taxonomic.genus,species=NA,infrasp=NA,taxonomic.status,currently.accepted,accepted.name,genus.only=1,input.name=genus,
                      input.match,taxon.rank=taxonRank,mod.date,long.name,authorship)
-  if(higher){output<-merge(higher.taxonomy,output,all.y=TRUE,by='genus',sort=FALSE);
+  if(higher){output<-cbind(higher.taxonomy,output);
               output<-subset(output,select= c('accepted.name','input.name','input.match','currently.accepted','genus.only','kingdom','phylum','class','order','family','genus','species','infrasp',
                                                          'long.name','taxonomic.status','taxon.rank','mod.date','authorship'))}else{
               output<-subset(output,select=c('accepted.name','input.name','input.match','currently.accepted','genus.only','genus','species','infrasp',

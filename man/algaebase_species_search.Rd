@@ -13,13 +13,14 @@ algaebase_species_search(
   print.full.json = FALSE,
   newest.only = TRUE,
   long = FALSE,
-  print.df = FALSE,
   exact.matches.only = FALSE,
   api_file = NULL
 )
 }
 \arguments{
 \item{genus}{genus name as character string}
+
+\item{species}{species name as character string}
 
 \item{apikey}{valid key for algaebase API as character string}
 
@@ -36,8 +37,6 @@ algaebase_species_search(
 \item{exact.matches.only}{boolean should results be limited to exact matches?}
 
 \item{api_file}{path to text file containing a valid API key}
-
-\item{return.higher.only}{boolean should output only included higher taxonomy?}
 }
 \value{
 data frame that may include: accepted.name (currently accepted synonym if different from input name), input.name (name supplied by user), input.match (1 if exact match, else 0), currently.accepted (1=TRUE/0=FALSE), genus.only (1=genus search/0=genus+species search),higher taxonomy (kingdom,phylum,class,order,family), genus, species (always NA for genus search), infraspecies name (always NA for genus search), long.name (includes author and date if given), taxonomic.status (currently accepted, synonym, or unverified), taxon.rank (taxonomic rank of accepted name (genus, species, infraspecies), mod.date (date when entry was last modified in algaebase).
