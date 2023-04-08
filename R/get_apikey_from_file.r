@@ -4,7 +4,7 @@
 #' @export get_apikey_fromfile
 #' @return api key as character string (invisibly)
 #'
-#' @examples apikey<-apikey.from.file(keyfile)
+#' @examples \dontrun{apikey<-get_apikey_fromfile("keyfile.txt")}
 
 get_apikey_fromfile<-function(keyfile)
 {
