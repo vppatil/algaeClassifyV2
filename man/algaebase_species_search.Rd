@@ -13,7 +13,7 @@ algaebase_species_search(
   print.full.json = FALSE,
   newest.only = TRUE,
   long = FALSE,
-  exact.matches.only = FALSE,
+  exact.matches.only = TRUE,
   api_file = NULL
 )
 }
