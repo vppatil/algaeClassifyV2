@@ -18,6 +18,7 @@ To use the new algaebase search functions, you MUST install v2.0.0 from github w
 ``` r
 require(devtools)
 install_github("vppatil/algaeClassifyV2",ref="main",dependencies=TRUE)
+# install_git("https://code.usgs.gov/asc/algaeClassify",ref="master") #this works for gitlab code.usgs.gov
 ```
 
 Next, load the package and ensure you have the correct version installed.
