@@ -42,14 +42,15 @@ Description: Functions that facilitate the use of accepted taxonomic nomenclatur
 	any such warranty. The software is provided on the condition that neither the USGS nor the U.S. 
 	Government shall be held liable for any damages resulting from the authorized or unauthorized 
 	use of the software.
-Depends: R (>= 4.2.2)
+Depends: R (>= 4.2.0)
 Imports: 
 	lubridate,
 	stats,
 	taxize,
 	ritis,
 	curl,
-	jsonlite
+	jsonlite,
+	methods
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
