@@ -16,5 +16,5 @@ api key as character string (invisibly)
 Get value of algaebase API key from a file
 }
 \examples{
-apikey<-apikey.from.file(keyfile)
+\dontrun{apikey<-get_apikey_fromfile("keyfile.txt")}
 }
