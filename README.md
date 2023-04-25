@@ -80,21 +80,13 @@ Synthesis and Analysis, with data and other support provided by members
 of GLEON (Global Lake Ecology Observation Network).
 
 ## Installation
-
-You can install the released version of algaeClassify from
-[CRAN](https://CRAN.R-project.org) with:
-
-```{r}
-install.packages("algaeClassify")
-```
-
 To use the new algaebase search functions, you MUST install v2.0.0 from
 code.usgs.gov at <https://doi.org/10.5066/F7S46Q3F>. If you have git installed,
 you can also install the package through R with:
 
 ``` {r}
 library(devtools)
-install_git("https://code.usgs.gov/asc/algaeClassify",ref="master")
+install_github("vppatil/algaeClassifyV2",ref="main",dependencies=TRUE)
 ```
 
 Next, load the package and ensure you have the correct version
