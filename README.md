@@ -1,10 +1,4 @@
 
----
-editor_options:
-  markdown:
-    wrap: 72
----
-
 # Package: algaeClassify
 
 ## Title: Determine Phytoplankton Functional Groups Based on Functional Traits
