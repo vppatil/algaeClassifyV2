@@ -51,8 +51,7 @@ Imports:
 	ritis,
 	curl,
 	jsonlite,
-	methods,
-	viridis
+	methods
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
