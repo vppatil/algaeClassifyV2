@@ -101,7 +101,7 @@ algaebase_search_df<-function(df,apikey=NULL,handle=NULL,genus.only=FALSE,
                                           higher=higher,
                                           print.full.json=FALSE,
                                           newest.only=TRUE,long=long,
-                                          exact.matches.only=TRUE,
+                                          exact.matches.only=exact.matches.only,
                                           api_file=api_file,
                                           return.higher.only=FALSE),silent=TRUE)
         }
