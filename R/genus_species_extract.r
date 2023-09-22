@@ -24,8 +24,6 @@ genus_species_extract<-function(phyto.df,phyto.name)
   orig.spp.list=spp.list
 
   spp.list=iconv(spp.list, to='UTF-8') #switched from ASCII- will retain umlauts, accents, etc.
-  spp.list<-gsub('A<','e',spp.list,fixed=T) #fix dipthong conversion
-
   spp.list=gsub('Cfr. ','',spp.list,ignore.case=T)
   spp.list=gsub('cf ','',spp.list,ignore.case=T)
   spp.list=gsub('cf.','',spp.list,ignore.case=T)
