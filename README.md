@@ -22,14 +22,14 @@ Dietmar Straile
 ## Suggested Citation
 
 Patil, V.P., Seltmann, T., Salmaso, N., Anneville, O., Lajeunesse, M.,
-Straile, D., 2023. algaeClassify (ver 1.0.0, Month 2023): U.S.
+Straile, D., 2023. algaeClassify (ver 2.0.1, September 2023): U.S.
 Geological Survey software release, <https://doi.org/10.5066/F7S46Q3F>
 
 ## Contact
 
 Vijay Patil [vpatil\@usgs.gov](mailto:vpatil@usgs.gov){.email} - U.S.
 Geological Survey - Alaska Science Center; 4210 University Drive;
-Anchorage, Alaska 99508 USA; 907-786-7000
+Anchorage, Alaska 99508 USA; 907-786-7178
 [ascweb\@usgs.gov](mailto:ascweb@usgs.gov){.email}
 
 ## Software Requirements
@@ -88,7 +88,7 @@ you can also install the package through R with:
 #the following packages are used to install packages from a code.usgs.gov 
 #repostiory:
 require(devtools)
-install_git("https://code.usgs.gov/asc/algaeClassify",ref="master") 
+install_git("https://code.usgs.gov/asc/algaeClassify",ref="main") 
 #update packages if necessary, or choose 'none' 
 ```
 
