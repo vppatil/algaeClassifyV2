@@ -216,6 +216,12 @@ algaebase_species_search(genus="Fragilaria",
                          species="vaucheriae var. capitellata")
 ```
 
+If desired, you can view the raw output in JSON format
+
+```
+algaebase_genus_search(genus="Cyclotella",higher=TRUE,print.full.json=TRUE)
+```
+
 ## Preprocessing data with genus_species_extract()
 
 The genus_species_extract function can be used to process a list of binomial
@@ -240,11 +246,6 @@ well as the name that was supplied by the user. There are columns
 indicating whether the input name is currently accepted and whether an
 exact match was found.
 
-If desired, you can view the raw output in JSON format
-
-```
-algaebase_genus_search(genus="Cyclotella",higher=TRUE,print.full.json=TRUE)
-```
 
 ## Submit a list of names to Algaebase. 
 
@@ -254,9 +255,10 @@ the genus_species_extract() function to create properly formatted columns of
 genus and species names.
 
 This will only return 1 result per name. If there are no exact matches
-it will return NA If there is no match for genus+species, it will search
-for a genus-only match or you can specify genus.only searches for the
-entire dataset.
+it will return NA by default. You can set exact.matches.only =FALSE for partial 
+matching, but this may result in more than one match returned per submitted 
+name. If there is no match for genus+species it will search for a genus-only 
+match or you can specify genus.only searches for the entire dataset.
 
 ```
 data(lakegeneva) #load small example dataset
@@ -269,6 +271,18 @@ lakegeneva.algaebase<-algaebase_search_df(lakegeneva,higher=TRUE,
 genus.name="genus",species.name="species")
 
 head(lakegeneva.algaebase)
+
+##partial matching for an incorrectly-spelled name:
+genus<-"Terpsinoe" # should be Terpsinoë
+species<-"musica"
+
+umlaut.test.df<-data.frame(genus,species)
+
+algaebase_search_df(umlaut.test.df) #no match
+
+algaebase_search_df(umlaut.test.df,exact.matches.only=FALSE) 
+#no species match, but the function tries a genus-only search next, and 
+finds the correct genus name as a partial match when exact.matches.only = FALSE.
 ```
 
 ## Other taxonomic search functions 
