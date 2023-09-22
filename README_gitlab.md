@@ -159,6 +159,21 @@ Finally, save and close the file, then restart R for changes to take
 effect. Once the ALGAEBASE_APIKEY variable is defined, you do not need
 to specify it in the algaebase search functions.
 
+## Allowing international encodings and special characters
+
+When reading in a phytplankton species list with read.csv, we recommend that 
+you specify the character encoding. In the United States, using UTF-8 should 
+correctly preserve umlautes, accents, and other special characters.
+
+```
+#example code. not a real file.
+phyto.data<-read.csv('my_phytoplankton_species_list.csv',encoding="UTF-8")
+
+#Can also set encoding for the R session.
+#This can be specified to happen at startup.
+options(encoding="UTF-8")
+```
+
 ## Algaebase search function examples:
 
 You can search for a single genus
