@@ -1,7 +1,7 @@
 Package: algaeClassify
 Title: Determine Phytoplankton Functional Groups Based on Functional Traits
 Version: 2.0.1
-Date: 2023-09-23
+Date: 2023-09-2023
 Authors@R: c(person("Vijay","Patil",email="vpatil@usgs.gov",role=c("aut","cre")),
 		   person("Torsten","Seltmann",role="aut"),
 		   person("Nico","Salmaso",role="aut"),

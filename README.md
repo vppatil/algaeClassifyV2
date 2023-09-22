@@ -1,4 +1,3 @@
-
 # Package: algaeClassify
 
 ## Title: Determine Phytoplankton Functional Groups Based on Functional Traits
@@ -81,7 +80,7 @@ of GLEON (Global Lake Ecology Observation Network).
 
 ## Installation
 
-To use the new algaebase search functions, you MUST install v2.0.0 from
+To use the new algaebase search functions, you MUST install v2.0.0 or later from
 code.usgs.gov at <https://doi.org/10.5066/F7S46Q3F>. If you have git installed,
 you can also install the package through R with:
 
