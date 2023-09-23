@@ -20,9 +20,17 @@ algaebase_search_df(
 )
 }
 \arguments{
+\item{df}{data frame containing columns with genus and species names}
+
 \item{apikey}{valid key for algaebase API as character string}
 
 \item{handle}{curl handle with API key. Will be created if not present.}
+
+\item{genus.only}{boolean: should searches be based solely on the genus name?}
+
+\item{genus.name}{name of data.frame column that contains genus names}
+
+\item{species.name}{name of data.frame column that contains species names}
 
 \item{higher}{boolean should higher taxonomy be included in output?}
 
@@ -35,8 +43,6 @@ algaebase_search_df(
 \item{api_file}{path to text file containing a valid API key}
 
 \item{sleep.time}{delay between algaebase queries (in seconds). Should be at least 1 second if querying more than 10 names at once.}
-
-\item{genus}{genus name as character string}
 }
 \value{
 data frame that may include: accepted.name (currently accepted synonym if different from input name), input.name (name supplied by user), input.match (1 if exact match, else 0), currently.accepted (1=TRUE/0=FALSE), genus.only (1=genus search/0=genus+species search),higher taxonomy (kingdom,phylum,class,order,family), genus, species (always NA for genus search), infraspecies name (always NA for genus search), long.name (includes author and date if given), taxonomic.status (currently accepted, synonym, or unverified), taxon.rank (taxonomic rank of accepted name (genus, species, infraspecies), mod.date (date when entry was last modified in algaebase).
