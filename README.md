@@ -55,7 +55,7 @@ Functions that facilitate the use of accepted taxonomic nomenclature,
 collection of functional trait data, and assignment of functional group
 classifications to phytoplankton species. Possible classifications
 include Morpho-functional group (MFG; [Salmaso et al. 2015]
-<https://doi:10.1111/fwb.12520>) and CSR, based on [Reynolds 1988] (Functional morphology
+<https://doi:10.1111/fwb.12520> ) and CSR, based on [Reynolds 1988] (Functional morphology
 and the adaptive strategies of phytoplankton. In C.D. Sandgren (ed).
 Growth and reproductive strategies of freshwater phytoplankton, 388-433.
 Cambridge University Press, New York) and [Reynolds 2006]
