@@ -34,7 +34,7 @@ Anchorage, Alaska 99508 USA; 907-786-7178
 
 ## Software Requirements
 
--   Requires R (version 4.2.2 or later)
+-   Requires R (version 4.3.0 or later)
     -   available for free download from the Comprehensive R Archive
         Network (CRAN) <https://cran.r-project.org>
 
