@@ -15,6 +15,8 @@
 #'
 #' @export algaebase_search_df
 #'
+#' @importFrom methods is
+#'
 #' @return data frame that may include: accepted.name (currently accepted synonym if different from input name), input.name (name supplied by user), input.match (1 if exact match, else 0), currently.accepted (1=TRUE/0=FALSE), genus.only (1=genus search/0=genus+species search),higher taxonomy (kingdom,phylum,class,order,family), genus, species (always NA for genus search), infraspecies name (always NA for genus search), long.name (includes author and date if given), taxonomic.status (currently accepted, synonym, or unverified), taxon.rank (taxonomic rank of accepted name (genus, species, infraspecies), mod.date (date when entry was last modified in algaebase).
 #'
 #' @examples
