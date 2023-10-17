@@ -30,8 +30,8 @@
 #'	new.lakegeneva$species))
 #'
 #' #checking for matches from all GNRS sources:
-#' lakegeneva.namematches <- gnr_simple_df(new.lakegeneva,"genus_species")
-#' head(lakegeneva.namematches)
+#' lakegeneva.namematches <- gnr_simple_df(new.lakegeneva[1:10,],"genus_species")
+#' lakegeneva.namematches
 
 
 gnr_simple_df<-function(df,name.column,sourceid=NA,topscore=TRUE,numhits=TRUE,canonical=TRUE,with_context=TRUE,...)
