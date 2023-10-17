@@ -1,4 +1,4 @@
-# algaeClassify 2.0.0
+# algaeClassify 2.0.1
 
 ## Major changes
 
@@ -8,3 +8,5 @@ and extracting higher taxonomy using the Geographic Names Resolution Service and
 the ITIS taxonomic database.
 
 ## Minor changes
+
+-Version 2.0.1 has been approved as an official U.S. Geological Survey software release.
