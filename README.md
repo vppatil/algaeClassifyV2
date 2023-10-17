@@ -22,7 +22,7 @@ Dietmar Straile
 ## Suggested Citation
 
 Patil, V.P., Seltmann, T., Salmaso, N., Anneville, O., Lajeunesse, M.,
-Straile, D., 2023. algaeClassify (ver 2.0.1, September 2023): U.S.
+Straile, D., 2023. algaeClassify (ver 2.0.1, October 2023): U.S.
 Geological Survey software release, <https://doi.org/10.5066/F7S46Q3F>
 
 ## Contact
@@ -40,7 +40,8 @@ Anchorage, Alaska 99508 USA; 907-786-7178
 
 ## Distribution
 
--   Comprehensive R Archive Network (CRAN) <https://cran.r-project.org>
+-   Comprehensive R Archive Network (CRAN) 
+    <https://cran.r-project.org/web/packages/algaeClassify/index.html>
 
 -   The U.S. Geological Survey through this repository
     <https://doi.org/10.5066/F7S46Q3F>
@@ -54,7 +55,7 @@ Functions that facilitate the use of accepted taxonomic nomenclature,
 collection of functional trait data, and assignment of functional group
 classifications to phytoplankton species. Possible classifications
 include Morpho-functional group (MFG; [Salmaso et al. 2015]
-<doi:10.1111/fwb.12520>) and CSR, based on [Reynolds 1988] (Functional morphology
+<https://doi:10.1111/fwb.12520>) and CSR, based on [Reynolds 1988] (Functional morphology
 and the adaptive strategies of phytoplankton. In C.D. Sandgren (ed).
 Growth and reproductive strategies of freshwater phytoplankton, 388-433.
 Cambridge University Press, New York) and [Reynolds 2006]
