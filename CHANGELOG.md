@@ -1,5 +1,5 @@
 ## Change Log for:   algaeClassify
 
-- v1.0.0
-	- 2023-xx-xx
-	- Original software release
+- v2.0.1
+	- 2023-10-17
+	- Official software release
