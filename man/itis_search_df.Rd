@@ -37,6 +37,6 @@ new.lakegeneva <- genus_species_extract(lakegeneva,'phyto_name')
 #checking for genus-only name matches in ITIS, and extracting higher taxonomy
 #flagging names with imperfect or no matches
 
-lakegeneva.genus.itischeck <- itis_search_df(new.lakegeneva,"genus",genus.only=TRUE)
-head(lakegeneva.genus.itischeck)
+lakegeneva.genus.itischeck <- itis_search_df(new.lakegeneva[1:10,],"genus",genus.only=TRUE)
+lakegeneva.genus.itischeck
 }

@@ -53,6 +53,6 @@ new.lakegeneva$genus_species <- trimws(paste(new.lakegeneva$genus,
 new.lakegeneva$species))
 
 #checking for matches from all GNRS sources:
-lakegeneva.namematches <- gnr_simple_df(new.lakegeneva,"genus_species")
-head(lakegeneva.namematches)
+lakegeneva.namematches <- gnr_simple_df(new.lakegeneva[1:10,],"genus_species")
+lakegeneva.namematches
 }
