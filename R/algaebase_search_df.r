@@ -25,7 +25,7 @@
 #' #example dataset with 50 rows
 #'
 #' new.lakegeneva <- genus_species_extract(lakegeneva,'phyto_name')
-#' lakegeneva.algaebase<-algaebase_search_df(new.lakegeneva,higher=TRUE,long=TRUE)
+#' lakegeneva.algaebase<-algaebase_search_df(new.lakegeneva[1:10,],higher=TRUE,long=TRUE)
 #' head(lakegeneva.algaebase)}
 #'
 algaebase_search_df<-function(df,apikey=NULL,handle=NULL,genus.only=FALSE,

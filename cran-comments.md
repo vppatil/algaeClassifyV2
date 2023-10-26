@@ -1,7 +1,7 @@
 ## Test environments
 * local windows 10 environment, R 4.3.1
-* ubuntu 16.04 (on r_hub), R-release 3.6.1
-* Fedora (on r_hub), R-devel
+* ubuntu 20.04 (on r_hub), R-release 4.3.1
+* Fedora Linux (on r_hub), R-devel, clang, gfortran
 * win-builder (devel and release)
 
 ## R CMD check results

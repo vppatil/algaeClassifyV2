@@ -41,7 +41,7 @@ Anchorage, Alaska 99508 USA; 907-786-7178
 ## Distribution
 
 -   Comprehensive R Archive Network (CRAN) 
-    <https://cran.r-project.org/web/packages/algaeClassify/index.html>
+    <https://cran.r-project.org/package=algaeClassify>
 
 -   The U.S. Geological Survey through this repository
     <https://doi.org/10.5066/F7S46Q3F>
@@ -86,8 +86,8 @@ code.usgs.gov at <https://doi.org/10.5066/F7S46Q3F>. If you have git installed,
 you can also install the package through R with:
 
 ``` 
-#the following packages are used to install packages from a code.usgs.gov 
-#repostiory:
+#the following will install the package from the code.usgs.gov 
+#repository:
 require(devtools)
 install_git("https://code.usgs.gov/asc/algaeClassify",ref="main") 
 #update packages if necessary, or choose 'none' 
