@@ -19,12 +19,12 @@
 #' data(lakegeneva)
 #' #example dataset with 50 rows
 #'
-#' new.lakegeneva <- genus_species_extract(lakegeneva,'phyto_name')
+#' new.lakegeneva <- genus_species_extract(lakegeneva,'phyto_name')[1:5,]
 #'
 #' #checking for genus-only name matches in ITIS, and extracting higher taxonomy
 #' #flagging names with imperfect or no matches
 #'
-#' lakegeneva.genus.itischeck <- itis_search_df(new.lakegeneva[1:10,],"genus",genus.only=TRUE)
+#' lakegeneva.genus.itischeck <- itis_search_df(new.lakegeneva,"genus",genus.only=TRUE)
 #' lakegeneva.genus.itischeck
 
 itis_search_df<-function(df,namecol=NA,higher=FALSE,genus.only=FALSE)
