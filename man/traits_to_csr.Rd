@@ -38,5 +38,5 @@ traits_to_csr(sav=0.2,msv=10,msv.source='Reynolds 2006',traitrange=traitranges)
 
 }
 \seealso{
-/url{https://powellcenter.usgs.gov/geisha} for project information
+{<https://powellcenter.usgs.gov/geisha>} for project information
 }
