@@ -331,7 +331,7 @@ traits_to_mfg(flagella = 1,size = "large",colonial = 1,filament = 0,
 Users may be able to retrieve relevant trait data from published sources. For 
 convenience, algaeClassify has included tables of MFG and CSR trait values
 for common European species, extracted from [Rimet et al. 2018].
-<https://doi.org/10.1051/limn/2018009>.
+<doi:10.1051/limn/2018009>.
 
 ```
 data("csrTraits")

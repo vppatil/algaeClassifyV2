@@ -4,3 +4,5 @@
 cran-comments.md
 ^algaeClassify\.Rproj$
 ^CRAN-SUBMISSION$
+^\.json$
+

@@ -1,4 +1,4 @@
-##I have updated the submission for algaeClassify v2.0.1 on 10/17/2023 based on prechecks from the initial CRAN review.
+##I have updated the submission for algaeClassify v2.0.1 on 11/20/2023 based on prechecks from the initial CRAN review.
 
 ## Test environments
 * local windows 10 environment, R 4.3.1
@@ -13,17 +13,8 @@
 I believe some of the remaining notes are known bugs associated with rhub and other tools used for checking packages, which I cannot resolve. None of the remaining notes indicate problems with my code on any of the tested platforms.
 
 ##R CMD check results algaeClassify 2.0.1 
-Duration: 39s
-
-❯ checking top-level files ... NOTE
-  Non-standard files/directories found at top level:
-    'CHANGELOG.md' 'DISCLAIMER.md' 'LICENSE.md' 'code.json'
-
--This package is an official software release of my agency,
-	 (the U.S. Geological Survey), and these files are part of the 
-	 documentation requirements for all USGS software releases.
 	 
-❯ checking dependencies in R code ... NOTE
+1) checking dependencies in R code ... NOTE
   Initiating curl with CURL_SSL_BACKEND: openssl
   
   -I believe that this is an issue with curl rather than algaeClassify. As long as the user is set up to use curl this note should not create a problem.
@@ -40,40 +31,22 @@ Duration: 39s
 - These are all acronyms for online databases or names of r package functions,
   and are all correctly spelled.
 
-2) Non-standard files/directories found at top level:
-     'CHANGELOG.md' 'DISCLAIMER.md' 'LICENSE.md' 'code.json'
-	 
--This package is an official software release of my agency,
-	 (the U.S. Geological Survey), and these files are part of the 
-	 documentation requirements for all USGS software releases.
-
-3) Examples with CPU (user + system) or elapsed time > 5s
-                user system elapsed
-itis_search_df 0.464  0.009  10.219
-
--I modified the example for the itis_search_df function so it consistently runs in <5s on all platforms.
-
-4) Initiating curl with CURL_SSL_BACKEND: openssl
+2) Initiating curl with CURL_SSL_BACKEND: openssl
 
 -I believe that this is an issue with curl rather than algaeClassify. As long as the user is set up to use curl this note should not create a problem.
 	
-5) Skipping checking HTML validation: no command 'tidy' found
+3) Skipping checking HTML validation: no command 'tidy' found
 
 -This appears to be an issue with the test system used by Rhub, rather than a
 problem with the package code itself. This issue has been flagged on github as a
 general issue encountered by multiple packages.
 
-6) checkRd: (-1) traits_to_csr.Rd:41: Lost braces
-    41 | /url{https://powellcenter.usgs.gov/geisha} for project information
-       |     ^
-- I replaced the /url tag with angle braces <> around the url, which resolved this issue.
-
-7) Found the following files/directories:
+4) Found the following files/directories:
   ''NULL''
   
  -This appears to be an issue with the Rhub package, not algaeClassify. See https://github.com/r-hub/rhub/issues/560.
 
-8)* checking for detritus in the temp directory ... NOTE
+5)* checking for detritus in the temp directory ... NOTE
 Found the following files/directories:
   'lastMiKTeXException'
   
