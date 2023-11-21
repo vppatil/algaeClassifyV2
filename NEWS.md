@@ -1,7 +1,3 @@
-# algaeClassify 4.0.0
-
-# algaeClassify 3.0.0
-
 # algaeClassify 2.0.1
 
 ## Major changes
