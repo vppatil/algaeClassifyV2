@@ -1,4 +1,11 @@
-##I have updated the submission for algaeClassify v2.0.1 on 11/20/2023 based on prechecks from the CRAN review team.
+##I have updated the submission for algaeClassify v2.0.2 on 12/18/2023 based on errors flagged by Dr. Ripley and the CRAN review team.
+
+#I was not able to reproduce the decribed error in the genus_search_itis function. I believe the error may have occurred 
+due to a temporary outage in the ITIS website (www.itis.gov), which is maintained by the U.S. government.
+#To prevent this behavior, I have modified all functions that query the ITIS database (genus_search_itis, species_search_itis, and itis_search_df).
+All functions now first check whether the itis website is up. If not, they return a warning and a data.frame populated with NAs. This behavior will help
+users to avoid breaking their own code when the itis website is temporarily down.
+#I have re-built and tested the revised version (v2.0.2).
 
 ## Test environments
 * local windows 10 environment, R 4.3.1

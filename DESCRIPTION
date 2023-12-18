@@ -1,7 +1,7 @@
 Package: algaeClassify
-Title: Determine Phytoplankton Functional Groups Based on Functional Traits
-Version: 2.0.1
-Date: 2023-11-21
+Title: Tools to standardize phytoplankton taxonomic data and perform functional group classifications.
+Version: 2.0.2
+Date: 2023-12-18
 Authors@R: c(person("Vijay","Patil",email="vpatil@usgs.gov",role=c("aut","cre")),
 		   person("Torsten","Seltmann",role="aut"),
 		   person("Nico","Salmaso",role="aut"),
@@ -52,7 +52,8 @@ Imports:
 	ritis,
 	curl,
 	jsonlite,
-	methods
+	methods,
+	RCurl
 License: CC0
 Encoding: UTF-8
 LazyData: true
