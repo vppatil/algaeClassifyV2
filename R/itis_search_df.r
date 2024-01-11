@@ -17,9 +17,9 @@
 #' @examples
 #
 #' data(lakegeneva)
-#' #example dataset with 50 rows
+#' #example dataset
 #'
-#' new.lakegeneva <- genus_species_extract(lakegeneva,'phyto_name')[1:3,]
+#' new.lakegeneva <- genus_species_extract(lakegeneva,'phyto_name')[1:2,]
 #'
 #' #checking for genus-only name matches in ITIS, and extracting higher taxonomy
 #' #flagging names with imperfect or no matches
